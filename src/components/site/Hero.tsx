@@ -8,6 +8,8 @@ export function Hero() {
         <img
           src={heroImg.url}
           alt="Escola de Condução A1 Norte"
+          fetchPriority="high"
+          decoding="async"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
