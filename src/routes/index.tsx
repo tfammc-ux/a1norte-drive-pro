@@ -7,6 +7,7 @@ import { Categories } from "@/components/site/Categories";
 import { Team } from "@/components/site/Team";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,6 +32,7 @@ function Index() {
       <Team />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 }

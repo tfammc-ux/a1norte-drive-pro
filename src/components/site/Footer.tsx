@@ -12,9 +12,9 @@ export function Footer() {
           © {new Date().getFullYear()} Escola de Condução A1 Norte. Todos os direitos reservados.
         </p>
         <div className="flex gap-4 text-sm text-muted-foreground">
-          <a href="#" className="hover:text-foreground">Facebook</a>
-          <a href="#" className="hover:text-foreground">Instagram</a>
-          <a href="#" className="hover:text-foreground">WhatsApp</a>
+          <a href="https://www.facebook.com/ec.a1norte/?locale=pt_BR" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Facebook</a>
+          <a href="https://www.instagram.com/a1_norte/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram</a>
+          <a href="https://wa.me/351936241316" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">WhatsApp</a>
         </div>
       </div>
     </footer>
