@@ -27,8 +27,18 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo.url} alt="A1 Norte" className="h-10 w-10 rounded-full object-cover" />
-          <span className="font-display text-xl tracking-wider text-foreground">
+          <img
+            src={logo.url}
+            alt="A1 Norte"
+            className={`h-10 w-10 rounded-full object-cover transition-all ${
+              scrolled ? "" : "bg-white/95 ring-2 ring-white/80"
+            }`}
+          />
+          <span
+            className={`font-display text-xl tracking-wider transition-colors ${
+              scrolled ? "text-foreground" : "text-white"
+            }`}
+          >
             A1 NORTE
           </span>
         </a>
@@ -37,7 +47,11 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-medium transition-colors ${
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-white/80 hover:text-white"
+              }`}
             >
               {l.label}
             </a>
@@ -55,8 +69,8 @@ export function Navbar() {
           onClick={() => setOpen(!open)}
         >
           <div className="space-y-1.5">
-            <span className="block h-0.5 w-6 bg-foreground" />
-            <span className="block h-0.5 w-6 bg-foreground" />
+            <span className={`block h-0.5 w-6 ${scrolled ? "bg-foreground" : "bg-white"}`} />
+            <span className={`block h-0.5 w-6 ${scrolled ? "bg-foreground" : "bg-white"}`} />
           </div>
         </button>
       </div>
