@@ -11,7 +11,7 @@ export function About() {
             className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[var(--shadow-elegant)]"
           />
           <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-accent p-6 text-accent-foreground shadow-[var(--shadow-card)] md:block">
-            <div className="font-display text-4xl">+2.500</div>
+            <div className="font-display text-4xl">+1.000</div>
             <div className="text-xs uppercase tracking-widest">
               Cartas entregues
             </div>
