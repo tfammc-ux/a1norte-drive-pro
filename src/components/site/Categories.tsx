@@ -1,53 +1,49 @@
-const categories = [
-  { code: "B", title: "Ligeiros", desc: "Automóveis até 3.500 kg e 9 lugares.", age: "18 anos" },
-  { code: "A1", title: "Motociclos 125cc", desc: "Motociclos até 125 cc e 11 kW.", age: "16 anos" },
-  { code: "A2", title: "Motociclos médios", desc: "Motociclos até 35 kW de potência.", age: "18 anos" },
-  { code: "A", title: "Motociclos", desc: "Sem limite de cilindrada ou potência.", age: "24 anos" },
-  { code: "AM", title: "Ciclomotores", desc: "Ciclomotores até 50 cc e 45 km/h.", age: "16 anos" },
-  { code: "BE", title: "Ligeiros c/ reboque", desc: "Conjunto até 7.000 kg de PB.", age: "18 anos" },
+const features = [
+  { title: "Veículos até 3.500 kg", desc: "Automóveis ligeiros de passageiros e mercadorias com lotação até 9 lugares (incluindo condutor)." },
+  { title: "Idade mínima 18 anos", desc: "Início da formação a partir dos 17 anos e meio, com exame após completar os 18." },
+  { title: "Código + Prática", desc: "Formação teórica completa e aulas práticas com instrutores experientes." },
+  { title: "Reboques ligeiros", desc: "Permite ainda conduzir conjuntos com reboque até 750 kg." },
 ];
 
 export function Categories() {
   return (
     <section id="categorias" className="bg-secondary py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-              Categorias
-            </span>
-            <h2 className="mt-4 font-display text-5xl leading-[1] text-foreground md:text-6xl">
-              Escolha a sua carta.
-            </h2>
-          </div>
-          <p className="max-w-md text-muted-foreground">
-            Formação completa em todas as categorias de carta de condução,
-            adaptada ao seu ritmo e objetivos.
+        <div className="mb-16 max-w-2xl">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+            Categoria B
+          </span>
+          <h2 className="mt-4 font-display text-5xl leading-[1] text-foreground md:text-6xl">
+            A carta para a sua vida.
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Especializamo-nos na formação da carta de condução de categoria B —
+            a mais procurada em Portugal. Tudo o que precisa para conduzir o seu
+            automóvel com confiança.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((c) => (
-            <div
-              key={c.code}
-              className="group relative bg-card p-8 transition-colors hover:bg-foreground"
-            >
-              <div className="flex items-start justify-between">
-                <div className="font-display text-7xl leading-none text-foreground transition-colors group-hover:text-accent">
-                  {c.code}
-                </div>
-                <span className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground transition-colors group-hover:border-background/20 group-hover:text-background/70">
-                  ≥ {c.age}
-                </span>
+        <div className="grid grid-cols-1 gap-10 rounded-3xl bg-card p-10 shadow-[var(--shadow-elegant)] md:grid-cols-[auto_1fr] md:gap-16 md:p-16">
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              <div className="font-display text-[10rem] leading-none text-foreground md:text-[14rem]">
+                B
               </div>
-              <h3 className="mt-6 font-display text-2xl text-foreground transition-colors group-hover:text-background">
-                {c.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground transition-colors group-hover:text-background/70">
-                {c.desc}
-              </p>
+              <span className="absolute -top-2 right-0 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent-foreground">
+                Ligeiros
+              </span>
             </div>
-          ))}
+          </div>
+          <div className="grid grid-cols-1 gap-8 self-center sm:grid-cols-2">
+            {features.map((f) => (
+              <div key={f.title} className="border-l-2 border-accent pl-5">
+                <h3 className="font-display text-xl text-foreground">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
