@@ -2,7 +2,7 @@ const features = [
   { title: "Automóveis", desc: "Automóveis ligeiros de passageiros e mercadorias até 3 500 kg e lotação até 9 lugares (incluindo condutor)." },
   { title: "Idade mínima 18 anos", desc: "Pode iniciar a formação 6 meses antes de completar 18 anos." },
   { title: "Formação", desc: "28 horas de formação teórica e 32 horas de formação prática de condução." },
-  { title: "On-line", desc: "Plataforma de ensino à distância disponível para realizar horas de formação teórica." },
+  { title: "Online", desc: "Plataforma de ensino à distância disponível para realizar horas de formação teórica." },
 ];
 
 export function Categories() {
@@ -14,7 +14,7 @@ export function Categories() {
             Categoria B
           </span>
           <h2 className="mt-4 font-display text-5xl leading-[1] text-foreground md:text-6xl">
-            A carta para a sua vida.
+            A carta para a tua vida.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
             Especializamo-nos na formação da carta de condução de categoria B —
