@@ -1,8 +1,8 @@
 const features = [
-  { title: "Veículos até 3.500 kg", desc: "Automóveis ligeiros de passageiros e mercadorias com lotação até 9 lugares (incluindo condutor)." },
-  { title: "Idade mínima 18 anos", desc: "Início da formação a partir dos 17 anos e meio, com exame após completar os 18." },
-  { title: "Código + Prática", desc: "Formação teórica completa e aulas práticas com instrutores experientes." },
-  { title: "Reboques ligeiros", desc: "Permite ainda conduzir conjuntos com reboque até 750 kg." },
+  { title: "Automóveis", desc: "Automóveis ligeiros de passageiros e mercadorias até 3 500 kg e lotação até 9 lugares (incluindo condutor)." },
+  { title: "Idade mínima 18 anos", desc: "Pode iniciar a formação 6 meses antes de completar 18 anos." },
+  { title: "Formação", desc: "28 horas de formação teórica e 32 horas de formação prática de condução." },
+  { title: "On-line", desc: "Plataforma de ensino à distância disponível para realizar horas de formação teórica." },
 ];
 
 export function Categories() {
