@@ -39,7 +39,9 @@ export function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#contacto"
+              href="https://wa.me/351936241316?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20carta%20de%20condu%C3%A7%C3%A3o%20na%20A1%20Norte."
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-transform hover:scale-105"
             >
               Inscrever agora

@@ -1,6 +1,6 @@
 const stats = [
   { value: "10+", label: "Anos de experiência" },
-  { value: "+1.000", label: "Alunos aprovados" },
+  { value: "+ 1000", label: "Alunos" },
   { value: "Categoria B", label: "Especialistas em ligeiros" },
 ];
 
