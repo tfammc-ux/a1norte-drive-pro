@@ -17,9 +17,7 @@ export function Categories() {
             A carta para a tua vida.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Especializamo-nos na formação da carta de condução de categoria B —
-            a mais procurada em Portugal. Tudo o que precisa para conduzir o seu
-            automóvel com confiança.
+            Especializamo-nos na formação da carta de condução de categoria B.
           </p>
         </div>
 
