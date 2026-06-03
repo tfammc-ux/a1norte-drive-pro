@@ -30,12 +30,12 @@ export function Hero() {
             </span>
           </div>
           <h1 className="font-display text-6xl leading-[0.95] text-white md:text-8xl lg:text-9xl">
-            A sua carta<br />
+            A tua carta<br />
             <span className="text-accent">começa aqui.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-white/80 md:text-xl">
-            Há mais de uma década a formar condutores no Norte de Portugal com
-            rigor, segurança e proximidade.
+            Aprender a conduzir pode ser simples.<br />
+            Com rigor, segurança e proximidade.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
