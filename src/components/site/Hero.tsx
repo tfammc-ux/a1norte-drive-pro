@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import heroImg from "@/assets/aluna-carro.asset.json";
+import heroImg from "@/assets/aluna-carro.jpg";
 
 export function Hero() {
   return (
     <section id="top" className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={heroImg.url}
+          src={heroImg}
           alt="Escola de Condução A1 Norte"
           fetchPriority="high"
           decoding="async"

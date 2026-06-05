@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.asset.json";
+import logo from "@/assets/logo.png";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -28,7 +28,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt="A1 Norte"
             className={`h-10 w-10 rounded-full object-cover transition-all ${
               scrolled ? "" : "bg-white/95 ring-2 ring-white/80"

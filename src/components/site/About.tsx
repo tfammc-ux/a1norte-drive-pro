@@ -1,4 +1,4 @@
-import alunaImg from "@/assets/aluna-carta.asset.json";
+import alunaImg from "@/assets/aluna-carta.jpg";
 
 export function About() {
   return (
@@ -6,7 +6,7 @@ export function About() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 md:grid-cols-2 md:items-center">
         <div className="relative">
           <img
-            src={alunaImg.url}
+            src={alunaImg}
             alt="Aluna com a sua nova carta de condução"
             className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[var(--shadow-elegant)]"
           />
