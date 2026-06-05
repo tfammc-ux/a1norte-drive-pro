@@ -22,7 +22,7 @@ export function About() {
             Sobre Nós
           </span>
           <h2 className="mt-4 font-display text-5xl leading-[1] text-foreground md:text-6xl">
-            Uma escol(h)a feita<br />para o seu sucesso.
+            Uma escol(h)a feita<br />para o teu sucesso.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             Na A1 Norte acreditamos que aprender a conduzir é muito mais do

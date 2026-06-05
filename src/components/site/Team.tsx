@@ -10,7 +10,7 @@ export function Team() {
             As Nossas Instalações
           </span>
           <h2 className="mt-4 font-display text-5xl leading-[1] text-foreground md:text-6xl">
-            Um espaço pensado para si.
+            Um espaço pensado para ti.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
             Receção acolhedora e salas de formação modernas, equipadas para
