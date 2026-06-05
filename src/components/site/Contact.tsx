@@ -18,7 +18,7 @@ export function Contact() {
           Pronto para começar?
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg text-background/70">
-          Fale connosco diretamente. Resposta rápida, sem burocracias.
+          Fala connosco diretamente. Resposta rápida, sem burocracias.
         </p>
 
         <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
