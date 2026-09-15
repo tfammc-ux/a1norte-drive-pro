@@ -29,11 +29,9 @@ export const Route = createFileRoute("/area-aluno")({
 const STORAGE_KEY = "a1norte-area-aluno";
 const ACCESS_CODE = "A1norte";
 
-const horario = [
-  { dia: "Segunda-feira", hora: "18:30 – 19:30", tema: "Sinais de trânsito e regras gerais" },
-  { dia: "Quarta-feira", hora: "18:30 – 19:30", tema: "Cedência de passagem e prioridade" },
-  { dia: "Sexta-feira", hora: "18:30 – 19:30", tema: "Exercícios de exame práticos" },
-];
+const horarioHoras = ["10H", "15H", "18H"];
+const diasSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"];
+const indiceSemAulas = 2; // Quarta-feira sem aulas
 
 const avisos = [
   {
@@ -42,14 +40,14 @@ const avisos = [
       "Chega com antecedência para te instalares com calma. As aulas começam à hora marcada para não interromper a sessão.",
   },
   {
-    titulo: "Faltas e marcações",
+    titulo: "Sem marcação",
     texto:
-      "Se não puderes comparecer a uma aula, avisa-nos com pelo menos 24 horas de antecedência através do WhatsApp para marcares outra sessão.",
+      "Não é necessária marcação para assistir às aulas de código: basta aparecer no horário que te der mais jeito.",
   },
   {
     titulo: "Testes de código",
     texto:
-      "Os testes de simulação estão disponíveis na plataforma online. Faz pelo menos 3 testes antes do dia do exame — é a melhor forma de garantir a aprovação.",
+      "Os testes de código estão disponíveis online ou presencialmente nos computadores da escola. Faz pelo menos 3 testes antes do dia do exame — é a melhor forma de garantir a aprovação.",
   },
 ];
 
