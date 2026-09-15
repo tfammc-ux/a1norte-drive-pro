@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 
 const links = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#categorias", label: "Categorias" },
-  { href: "#equipa", label: "Equipa" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#categorias", label: "Categorias" },
+  { href: "/#equipa", label: "Equipa" },
+  { href: "/#contacto", label: "Contacto" },
+  { href: "/area-aluno", label: "Área do Aluno" },
 ];
 
 export function Navbar() {
