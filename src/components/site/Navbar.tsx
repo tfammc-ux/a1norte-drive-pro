@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 
 const links = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#categorias", label: "Categorias" },
-  { href: "#equipa", label: "Equipa" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#categorias", label: "Categorias" },
+  { href: "/#equipa", label: "Equipa" },
+  { href: "/#contacto", label: "Contacto" },
+  { href: "/area-aluno", label: "Área do Aluno" },
 ];
 
 export function Navbar() {
@@ -57,7 +58,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
           >
             Inscrever
