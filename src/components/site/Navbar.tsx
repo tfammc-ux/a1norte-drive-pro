@@ -58,7 +58,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
           >
             Inscrever
