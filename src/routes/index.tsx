@@ -16,10 +16,10 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Escola de Condução A1 Norte. Formação profissional para todas as categorias de carta. Inscreva-se hoje." },
       { property: "og:title", content: "A1 Norte — Escola de Condução" },
       { property: "og:description", content: "Formação profissional para todas as categorias de carta no Norte de Portugal." },
-      { property: "og:url", content: "https://a1norte-drive-pro.lovable.app/" },
+      { property: "og:url", content: "https://www.escoladeconducaoa1norte.pt/" },
     ],
     links: [
-      { rel: "canonical", href: "https://a1norte-drive-pro.lovable.app/" },
+      { rel: "canonical", href: "https://www.escoladeconducaoa1norte.pt/" },
     ],
     scripts: [
       {
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Escola de Condução A1 Norte",
-          url: "https://a1norte-drive-pro.lovable.app/",
+          url: "https://www.escoladeconducaoa1norte.pt/",
           telephone: "+351 936 241 316",
           email: "ec.a1norte@gmail.com",
           areaServed: "PT",

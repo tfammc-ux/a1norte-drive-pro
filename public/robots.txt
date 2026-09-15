@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://a1norte-drive-pro.lovable.app/sitemap.xml
+Sitemap: https://www.escoladeconducaoa1norte.pt/sitemap.xml
