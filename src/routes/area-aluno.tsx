@@ -176,26 +176,42 @@ function AlunoContent() {
 
         {/* Tabela (desktop) */}
         <div className="hidden overflow-hidden rounded-2xl border border-border bg-card shadow-card md:block">
-          <table className="w-full text-left">
+          <table className="w-full text-center">
             <thead>
               <tr className="border-b border-border bg-muted/50">
-                <th className="px-6 py-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Dia
+                <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Horário
                 </th>
-                <th className="px-6 py-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Hora
-                </th>
-                <th className="px-6 py-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Tema
-                </th>
+                {diasSemana.map((d) => (
+                  <th
+                    key={d}
+                    className={`px-4 py-4 text-sm font-semibold uppercase tracking-wider ${
+                      d === "Quarta" ? "text-muted-foreground/50" : "text-muted-foreground"
+                    }`}
+                  >
+                    {d}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {horario.map((h) => (
-                <tr key={h.dia} className="border-b border-border last:border-0">
-                  <td className="px-6 py-4 font-medium text-foreground">{h.dia}</td>
-                  <td className="px-6 py-4 text-muted-foreground">{h.hora}</td>
-                  <td className="px-6 py-4 text-muted-foreground">{h.tema}</td>
+              {horarioHoras.map((hora) => (
+                <tr key={hora} className="border-b border-border last:border-0">
+                  <td className="px-6 py-4 text-left font-display text-lg tracking-wide text-foreground">
+                    {hora}
+                  </td>
+                  {diasSemana.map((d, i) => (
+                    <td key={d} className="px-4 py-4">
+                      {i === indiceSemAulas ? (
+                        <span className="text-sm text-muted-foreground/50">Sem aulas</span>
+                      ) : (
+                        <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
+                          <span className="h-2 w-2 rounded-full bg-accent" />
+                          Aula
+                        </span>
+                      )}
+                    </td>
+                  ))}
                 </tr>
               ))}
             </tbody>
@@ -204,18 +220,23 @@ function AlunoContent() {
 
         {/* Cartões (telemóvel) */}
         <div className="space-y-3 md:hidden">
-          {horario.map((h) => (
-            <div key={h.dia} className="rounded-xl border border-border bg-card p-5 shadow-card">
+          {horarioHoras.map((hora) => (
+            <div key={hora} className="rounded-xl border border-border bg-card p-5 shadow-card">
               <div className="flex items-center justify-between">
-                <span className="font-display text-lg tracking-wide text-foreground">{h.dia}</span>
+                <span className="font-display text-lg tracking-wide text-foreground">{hora}</span>
                 <span className="rounded-full bg-accent/10 px-3 py-1 text-sm font-semibold text-accent">
-                  {h.hora}
+                  Seg · Ter · Qui · Sex
                 </span>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">{h.tema}</p>
+              <p className="mt-2 text-sm text-muted-foreground">Sem aulas à quarta-feira.</p>
             </div>
           ))}
         </div>
+
+        <p className="mt-4 text-sm text-muted-foreground">
+          As aulas decorrem de segunda a sexta-feira, com um programa em ciclo de 4 semanas
+          (16 módulos). Escolhe o horário que te for mais cómodo.
+        </p>
       </section>
 
       {/* Avisos */}
