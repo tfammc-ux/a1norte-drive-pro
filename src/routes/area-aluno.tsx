@@ -211,69 +211,95 @@ function AlunoContent() {
           Horário das Aulas de Código
         </h2>
 
-        {/* Tabela (desktop) */}
-        <div className="hidden overflow-hidden rounded-2xl border border-border bg-card shadow-card md:block">
-          <table className="w-full text-center">
-            <thead>
-              <tr className="border-b border-border bg-muted/50">
-                <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Horário
-                </th>
-                {diasSemana.map((d) => (
-                  <th
-                    key={d}
-                    className={`px-4 py-4 text-sm font-semibold uppercase tracking-wider ${
-                      d === "Quarta" ? "text-muted-foreground/50" : "text-muted-foreground"
-                    }`}
-                  >
-                    {d}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {horarioHoras.map((hora) => (
-                <tr key={hora} className="border-b border-border last:border-0">
-                  <td className="px-6 py-4 text-left font-display text-lg tracking-wide text-foreground">
-                    {hora}
-                  </td>
-                  {diasSemana.map((d, i) => (
-                    <td key={d} className="px-4 py-4">
-                      {i === indiceSemAulas ? (
-                        <span className="text-sm text-muted-foreground/50">Sem aulas</span>
-                      ) : (
-                        <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
-                          <span className="h-2 w-2 rounded-full bg-accent" />
-                          Aula
-                        </span>
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Cartões (telemóvel) */}
-        <div className="space-y-3 md:hidden">
-          {horarioHoras.map((hora) => (
-            <div key={hora} className="rounded-xl border border-border bg-card p-5 shadow-card">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-lg tracking-wide text-foreground">{hora}</span>
-                <span className="rounded-full bg-accent/10 px-3 py-1 text-sm font-semibold text-accent">
-                  Seg · Ter · Qui · Sex
+        <div className="grid gap-5 lg:grid-cols-2">
+          {semanas.map((semana) => (
+            <div
+              key={semana.nome}
+              className="overflow-hidden rounded-2xl border border-border bg-card shadow-card"
+            >
+              <div className="border-b border-border bg-muted/50 px-5 py-3">
+                <span className="font-display text-lg tracking-wide text-foreground">
+                  {semana.nome}
                 </span>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">Sem aulas à quarta-feira.</p>
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[420px] text-center text-sm">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Hora
+                      </th>
+                      {diasSemana.map((d, i) => (
+                        <th
+                          key={d}
+                          className={`px-2 py-3 text-xs font-semibold uppercase tracking-wider ${
+                            i === indiceSemAulas
+                              ? "bg-muted text-muted-foreground/50"
+                              : "text-muted-foreground"
+                          }`}
+                        >
+                          {d}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {horarioHoras.map((hora) => (
+                      <tr key={hora} className="border-b border-border last:border-0">
+                        <td className="px-3 py-3 text-left font-display text-base tracking-wide text-foreground">
+                          {hora}
+                        </td>
+                        {semana.linhas[hora].map((valor, i) => (
+                          <td
+                            key={i}
+                            className={`px-2 py-3 ${i === indiceSemAulas ? "bg-muted" : ""}`}
+                          >
+                            {i === indiceSemAulas || valor === "" ? (
+                              <span className="text-muted-foreground/30">—</span>
+                            ) : valor === "L" ? (
+                              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border font-semibold text-muted-foreground">
+                                L
+                              </span>
+                            ) : (
+                              <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-full bg-accent px-2 font-semibold text-accent-foreground">
+                                {valor}
+                              </span>
+                            )}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           ))}
         </div>
 
+        <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-accent px-2 text-xs font-semibold text-accent-foreground">
+              1
+            </span>
+            Número do módulo
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-border text-xs font-semibold">
+              L
+            </span>
+            Aula livre
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="h-4 w-4 rounded bg-muted" />
+            Quarta-feira sem aulas
+          </span>
+        </div>
+
         <p className="mt-4 text-sm text-muted-foreground">
-          As aulas decorrem de segunda a sexta-feira, com um programa em ciclo de 4 semanas
-          (16 módulos). Escolhe o horário que te for mais cómodo.
+          O programa completo tem 16 módulos, num ciclo de 4 semanas. Podes entrar em qualquer
+          altura do ciclo e assistir às aulas no horário que te for mais cómodo.
         </p>
+
       </section>
 
       {/* Avisos */}
