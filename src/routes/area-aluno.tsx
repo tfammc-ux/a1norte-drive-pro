@@ -30,8 +30,45 @@ const STORAGE_KEY = "a1norte-area-aluno";
 const ACCESS_CODE = "A1norte";
 
 const horarioHoras = ["10H", "15H", "18H"];
-const diasSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"];
+const diasSemana = ["2ª Feira", "3ª Feira", "4ª Feira", "5ª Feira", "6ª Feira"];
 const indiceSemAulas = 2; // Quarta-feira sem aulas
+
+// Cada semana: { hora: [2ª, 3ª, 4ª, 5ª, 6ª] } — "" = sem aula, "L" = lição livre
+const semanas: { nome: string; linhas: Record<string, string[]> }[] = [
+  {
+    nome: "Semana 1",
+    linhas: {
+      "10H": ["1", "", "", "", "4"],
+      "15H": ["", "L", "", "3", ""],
+      "18H": ["2", "", "", "", "L"],
+    },
+  },
+  {
+    nome: "Semana 2",
+    linhas: {
+      "10H": ["5", "", "", "", "L"],
+      "15H": ["", "6", "", "7", ""],
+      "18H": ["L", "", "", "", "8"],
+    },
+  },
+  {
+    nome: "Semana 3",
+    linhas: {
+      "10H": ["L", "", "", "", "11"],
+      "15H": ["", "10", "", "L", ""],
+      "18H": ["9", "", "", "", "12"],
+    },
+  },
+  {
+    nome: "Semana 4",
+    linhas: {
+      "10H": ["13", "", "", "", "16"],
+      "15H": ["", "L", "", "15", ""],
+      "18H": ["14", "", "", "", "L"],
+    },
+  },
+];
+
 
 const avisos = [
   {
