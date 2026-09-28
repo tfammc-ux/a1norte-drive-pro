@@ -217,28 +217,30 @@ function AlunoContent() {
         </p>
 
         <div className="grid gap-5 lg:grid-cols-2">
-          {semanas.map((semana, idx) => (
+          {semanas.map((semana) => {
+            const isAtual = semana.nome === `Semana ${semanaAtual}`;
+            return (
             <div
               key={semana.nome}
               className={`overflow-hidden rounded-2xl border bg-card shadow-card ${
-                idx === semanaAtual
+                isAtual
                   ? "border-accent shadow-[0_0_0_3px] shadow-accent/20"
                   : "border-border"
               }`}
             >
               <div
                 className={`flex items-center justify-between border-b border-border px-5 py-3 ${
-                  idx === semanaAtual ? "bg-accent" : "bg-muted/50"
+                  isAtual ? "bg-accent" : "bg-muted/50"
                 }`}
               >
                 <span
                   className={`font-display text-lg tracking-wide ${
-                    idx === semanaAtual ? "text-accent-foreground" : "text-foreground"
+                    isAtual ? "text-accent-foreground" : "text-foreground"
                   }`}
                 >
                   {semana.nome}
                 </span>
-                {idx === semanaAtual && (
+                {isAtual && (
                   <span className="rounded-full bg-accent-foreground/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
                     Semana atual
                   </span>
@@ -295,7 +297,8 @@ function AlunoContent() {
                 </table>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
