@@ -32,6 +32,8 @@ const ACCESS_CODE = "A1norte";
 const horarioHoras = ["10H", "15H", "18H"];
 const diasSemana = ["2ª Feira", "3ª Feira", "4ª Feira", "5ª Feira", "6ª Feira"];
 const indiceSemAulas = 2; // Quarta-feira sem aulas
+// ← Muda aqui a semana destacada: 1 = Semana 1, 2 = Semana 2, 3 = Semana 3, 4 = Semana 4
+const semanaAtual = 1;
 
 // Cada semana: { hora: [2ª, 3ª, 4ª, 5ª, 6ª] } — "" = sem aula, "L" = lição livre
 const semanas: { nome: string; linhas: Record<string, string[]> }[] = [
@@ -207,20 +209,40 @@ function AlunoContent() {
 
       {/* Horário */}
       <section className="mb-14">
-        <h2 className="mb-5 font-display text-2xl tracking-wide text-foreground sm:text-3xl">
+        <h2 className="mb-2 font-display text-2xl tracking-wide text-foreground sm:text-3xl">
           Horário das Aulas de Código
         </h2>
+        <p className="mb-5 text-sm text-muted-foreground">
+          A semana destacada a vermelho é a semana em curso.
+        </p>
 
         <div className="grid gap-5 lg:grid-cols-2">
-          {semanas.map((semana) => (
+          {semanas.map((semana, idx) => (
             <div
               key={semana.nome}
-              className="overflow-hidden rounded-2xl border border-border bg-card shadow-card"
+              className={`overflow-hidden rounded-2xl border bg-card shadow-card ${
+                idx === semanaAtual
+                  ? "border-accent shadow-[0_0_0_3px] shadow-accent/20"
+                  : "border-border"
+              }`}
             >
-              <div className="border-b border-border bg-muted/50 px-5 py-3">
-                <span className="font-display text-lg tracking-wide text-foreground">
+              <div
+                className={`flex items-center justify-between border-b border-border px-5 py-3 ${
+                  idx === semanaAtual ? "bg-accent" : "bg-muted/50"
+                }`}
+              >
+                <span
+                  className={`font-display text-lg tracking-wide ${
+                    idx === semanaAtual ? "text-accent-foreground" : "text-foreground"
+                  }`}
+                >
                   {semana.nome}
                 </span>
+                {idx === semanaAtual && (
+                  <span className="rounded-full bg-accent-foreground/20 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-accent-foreground">
+                    Semana atual
+                  </span>
+                )}
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[420px] text-center text-sm">
