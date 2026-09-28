@@ -297,7 +297,8 @@ function AlunoContent() {
                 </table>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
