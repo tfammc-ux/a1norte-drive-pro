@@ -33,7 +33,7 @@ const horarioHoras = ["10H", "15H", "18H"];
 const diasSemana = ["2ª Feira", "3ª Feira", "4ª Feira", "5ª Feira", "6ª Feira"];
 const indiceSemAulas = 2; // Quarta-feira sem aulas
 // ← Muda aqui a semana destacada: 1 = Semana 1, 2 = Semana 2, 3 = Semana 3, 4 = Semana 4
-const semanaAtual = 1;
+const semanaAtual = 2;
 
 // Cada semana: { hora: [2ª, 3ª, 4ª, 5ª, 6ª] } — "" = sem aula, "L" = lição livre
 const semanas: { nome: string; linhas: Record<string, string[]> }[] = [
