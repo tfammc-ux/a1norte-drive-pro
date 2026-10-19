@@ -212,6 +212,16 @@ function AreaAluno() {
 }
 
 function AlunoContent() {
+  // Módulos da semana em curso, a partir da grelha do horário
+  const modulosSemanaAtual = Array.from(
+    new Set(
+      Object.values(semanas[semanaAtual - 1].linhas)
+        .flat()
+        .filter((v) => v !== "" && v !== "L")
+        .map(Number),
+    ),
+  );
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
       <div className="mb-10">
