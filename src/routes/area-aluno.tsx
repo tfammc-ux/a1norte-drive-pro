@@ -71,6 +71,25 @@ const semanas: { nome: string; linhas: Record<string, string[]> }[] = [
   },
 ];
 
+// Temas de cada módulo (1–16) — o número no horário corresponde a um destes temas
+const temas = [
+  "Sistema de Circulação Rodoviária e Sinalização",
+  "Sinais de Perigo",
+  "Sinais de Cedência de Passagem",
+  "Sinais de Proibição",
+  "Sinais de Obrigação e Prescrição Específica",
+  "Sinais de Indicação e Marcas Rodoviárias",
+  "Regras de Trânsito",
+  "Visibilidade e Iluminação Veículos / IPO / Equipamentos de Segurança",
+  "Velocidades",
+  "Cedência de Passagem e Cruzamento de Veículos",
+  "Manobras",
+  "Paragem e Estacionamento",
+  "O Condutor e o seu estado Físico e Psicológico: TAS",
+  "O Condutor e o Veículo, a Via e fatores Externos",
+  "Habilitação Legal para Conduzir",
+  "Responsabilidade Civil: Contraordenações",
+];
 
 const avisos = [
   {
@@ -193,6 +212,16 @@ function AreaAluno() {
 }
 
 function AlunoContent() {
+  // Módulos da semana em curso, a partir da grelha do horário
+  const modulosSemanaAtual = Array.from(
+    new Set(
+      Object.values(semanas[semanaAtual - 1].linhas)
+        .flat()
+        .filter((v) => v !== "" && v !== "L")
+        .map(Number),
+    ),
+  );
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
       <div className="mb-10">
@@ -324,8 +353,50 @@ function AlunoContent() {
           O programa completo tem 16 módulos, num ciclo de 4 semanas. Podes entrar em qualquer
           altura do ciclo e assistir às aulas no horário que te for mais cómodo.
         </p>
-
       </section>
+
+      {/* Temas */}
+      <section className="mb-14">
+        <h2 className="mb-2 font-display text-2xl tracking-wide text-foreground sm:text-3xl">
+          Temas das Aulas
+        </h2>
+        <p className="mb-5 text-sm text-muted-foreground">
+          Cada número no horário corresponde a um tema. Os temas da semana em curso estão
+          destacados a vermelho.
+        </p>
+        <ol className="grid gap-3 sm:grid-cols-2">
+          {temas.map((tema, i) => {
+            const numero = i + 1;
+            const isSemanaAtual = modulosSemanaAtual.includes(numero);
+            return (
+              <li
+                key={numero}
+                className={`flex items-center gap-4 rounded-xl border bg-card p-4 shadow-card transition-colors ${
+                  isSemanaAtual ? "border-accent" : "border-border"
+                }`}
+              >
+                <span
+                  className={`inline-flex h-9 min-w-9 shrink-0 items-center justify-center rounded-full px-1 font-display text-base tracking-wide ${
+                    isSemanaAtual
+                      ? "bg-accent text-accent-foreground"
+                      : "border border-border text-muted-foreground"
+                  }`}
+                >
+                  {numero}
+                </span>
+                <span
+                  className={`text-sm leading-snug ${
+                    isSemanaAtual ? "font-semibold text-foreground" : "text-muted-foreground"
+                  }`}
+                >
+                  {tema}
+                </span>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+
 
       {/* Avisos */}
       <section>
