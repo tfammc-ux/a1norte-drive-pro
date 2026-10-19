@@ -71,6 +71,25 @@ const semanas: { nome: string; linhas: Record<string, string[]> }[] = [
   },
 ];
 
+// Temas de cada módulo (1–16) — o número no horário corresponde a um destes temas
+const temas = [
+  "Sistema de Circulação Rodoviária e Sinalização",
+  "Sinais de Perigo",
+  "Sinais de Cedência de Passagem",
+  "Sinais de Proibição",
+  "Sinais de Obrigação e Prescrição Específica",
+  "Sinais de Indicação e Marcas Rodoviárias",
+  "Regras de Trânsito",
+  "Visibilidade e Iluminação Veículos / IPO / Equipamentos de Segurança",
+  "Velocidades",
+  "Cedência de Passagem e Cruzamento de Veículos",
+  "Manobras",
+  "Paragem e Estacionamento",
+  "O Condutor e o seu estado Físico e Psicológico: TAS",
+  "O Condutor e o Veículo, a Via e fatores Externos",
+  "Habilitação Legal para Conduzir",
+  "Responsabilidade Civil: Contraordenações",
+];
 
 const avisos = [
   {
